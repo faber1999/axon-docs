@@ -1,0 +1,21 @@
+{
+  "name": "axon-examples",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@faber1999/axon.js": "^0.4.7",
+    "@faber1999/vite-plugin-axon": "^0.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "tailwindcss": "^4.2.1",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0"
+  }
+}
