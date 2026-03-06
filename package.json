@@ -3,6 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "type": "module",
+  "author": "Faber Grajales Hincapié <faber1999> (https://github.com/faber1999)",
+  "homepage": "https://axon-docs.fabergrajales.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/faber1999/axon-docs"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
