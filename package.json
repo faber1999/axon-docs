@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@faber1999/axon.js": "^0.4.7",
-    "@faber1999/vite-plugin-axon": "^0.3.0"
+    "@faber1999/vite-plugin-axon": "^0.3.0",
+    "highlight.js": "^11.11.1"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.1",

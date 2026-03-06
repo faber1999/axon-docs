@@ -1,29 +1,29 @@
 import { lazy, type RouteDefinition } from '@faber1999/axon.js'
+
 import { DocLayout } from '../components/DocLayout'
+
+import BatchUntrack from '../pages/docs/BatchUntrack'
+import Computed from '../pages/docs/Computed'
+import Context from '../pages/docs/Context'
+import DynamicPortal from '../pages/docs/DynamicPortal'
+import Effects from '../pages/docs/Effects'
+import ForPage from '../pages/docs/For'
+import Guards from '../pages/docs/Guards'
+import HowItWorks from '../pages/docs/HowItWorks'
+import Installation from '../pages/docs/Installation'
+import Introduction from '../pages/docs/Introduction'
+import JsxComponents from '../pages/docs/JsxComponents'
+import LazyLoading from '../pages/docs/LazyLoading'
+import Lifecycle from '../pages/docs/Lifecycle'
+import Navigation from '../pages/docs/Navigation'
+import RouterSetup from '../pages/docs/RouterSetup'
+import ShowPage from '../pages/docs/Show'
+import Signals from '../pages/docs/Signals'
+import Store from '../pages/docs/Store'
+import ViewTransitions from '../pages/docs/ViewTransitions'
 
 const Home = lazy(() => import('../pages/Home'))
 const NotFound = lazy(() => import('../pages/NotFound'))
-
-// Doc pages
-const Introduction = lazy(() => import('../pages/docs/Introduction'))
-const Installation = lazy(() => import('../pages/docs/Installation'))
-const Signals = lazy(() => import('../pages/docs/Signals'))
-const Effects = lazy(() => import('../pages/docs/Effects'))
-const Computed = lazy(() => import('../pages/docs/Computed'))
-const BatchUntrack = lazy(() => import('../pages/docs/BatchUntrack'))
-const JsxComponents = lazy(() => import('../pages/docs/JsxComponents'))
-const Lifecycle = lazy(() => import('../pages/docs/Lifecycle'))
-const ShowPage = lazy(() => import('../pages/docs/Show'))
-const ForPage = lazy(() => import('../pages/docs/For'))
-const DynamicPortal = lazy(() => import('../pages/docs/DynamicPortal'))
-const RouterSetup = lazy(() => import('../pages/docs/RouterSetup'))
-const Navigation = lazy(() => import('../pages/docs/Navigation'))
-const Guards = lazy(() => import('../pages/docs/Guards'))
-const LazyLoading = lazy(() => import('../pages/docs/LazyLoading'))
-const Store = lazy(() => import('../pages/docs/Store'))
-const Context = lazy(() => import('../pages/docs/Context'))
-const ViewTransitions = lazy(() => import('../pages/docs/ViewTransitions'))
-const HowItWorks = lazy(() => import('../pages/docs/HowItWorks'))
 
 export const routes: RouteDefinition[] = [
   { path: '/', component: Home },
@@ -51,6 +51,5 @@ export const routes: RouteDefinition[] = [
       { path: '/docs/how-it-works', component: HowItWorks }
     ]
   },
-
   { path: '*', component: NotFound }
 ]

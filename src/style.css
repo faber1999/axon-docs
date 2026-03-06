@@ -23,6 +23,18 @@
   --color-code-text: #1c1917;
   --color-code-header: #ebe9f1;
 
+  /* Syntax highlighting tokens */
+  --hljs-keyword: #7c3aed;
+  --hljs-string: #16a34a;
+  --hljs-comment: #9ca3af;
+  --hljs-number: #ea580c;
+  --hljs-builtin: #0369a1;
+  --hljs-function: #1d4ed8;
+  --hljs-type: #0891b2;
+  --hljs-tag: #dc2626;
+  --hljs-attr: #9333ea;
+  --hljs-meta: #ca8a04;
+
   /* Layout */
   --sidebar-width: 256px;
   --navbar-height: 56px;
@@ -47,6 +59,18 @@ html.dark {
   --color-code-border: #27272a;
   --color-code-text: #e4e4e7;
   --color-code-header: #27272a;
+
+  /* Syntax highlighting tokens */
+  --hljs-keyword: #c084fc;
+  --hljs-string: #86efac;
+  --hljs-comment: #52525b;
+  --hljs-number: #fb923c;
+  --hljs-builtin: #38bdf8;
+  --hljs-function: #93c5fd;
+  --hljs-type: #67e8f9;
+  --hljs-tag: #fca5a5;
+  --hljs-attr: #d8b4fe;
+  --hljs-meta: #fde047;
 }
 
 /* ─── Base ──────────────────────────────────────────────────── */
@@ -348,7 +372,8 @@ body {
 .code-block-header {
   display: flex;
   align-items: center;
-  padding: 5px 14px;
+  gap: 8px;
+  padding: 5px 6px 5px 14px;
   background: var(--color-code-header);
   border-bottom: 1px solid var(--color-code-border);
 }
@@ -368,6 +393,38 @@ body {
   font-family: 'Consolas', monospace;
 }
 
+.code-block-spacer { flex: 1; }
+
+.code-block-copy {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--color-text-subtle);
+  font-size: 0.72rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.1s, color 0.1s, border-color 0.1s;
+  white-space: nowrap;
+}
+
+.code-block-copy:hover {
+  background: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+.code-block-copy--ok {
+  color: #16a34a;
+  border-color: transparent !important;
+  background: transparent !important;
+}
+
+html.dark .code-block-copy--ok { color: #86efac; }
+
 .code-block-pre {
   margin: 0;
   padding: 16px 20px;
@@ -386,6 +443,47 @@ body {
   white-space: pre;
   display: block;
 }
+
+/* ─── Syntax highlighting (highlight.js) ───────────────────── */
+.hljs { color: var(--color-code-text); background: transparent; }
+
+.hljs-keyword,
+.hljs-operator,
+.hljs-punctuation.hljs-important { color: var(--hljs-keyword); font-weight: 500; }
+
+.hljs-string,
+.hljs-regexp,
+.hljs-template-string { color: var(--hljs-string); }
+
+.hljs-comment,
+.hljs-quote { color: var(--hljs-comment); font-style: italic; }
+
+.hljs-number,
+.hljs-literal { color: var(--hljs-number); }
+
+.hljs-built_in,
+.hljs-class .hljs-title { color: var(--hljs-builtin); }
+
+.hljs-title.function_,
+.hljs-title { color: var(--hljs-function); }
+
+.hljs-title.class_ { color: var(--hljs-type); }
+
+.hljs-type,
+.hljs-params { color: var(--hljs-type); }
+
+.hljs-tag { color: var(--hljs-tag); }
+.hljs-name { color: var(--hljs-keyword); }
+.hljs-attr { color: var(--hljs-attr); }
+
+.hljs-meta,
+.hljs-meta .hljs-keyword { color: var(--hljs-meta); }
+
+.hljs-subst,
+.hljs-variable,
+.hljs-property { color: var(--color-code-text); }
+
+.hljs-punctuation { color: var(--color-text-muted); }
 
 /* ─── NavPager ──────────────────────────────────────────────── */
 .nav-pager {
