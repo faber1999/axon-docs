@@ -108,6 +108,7 @@ body {
   padding: 0 20px;
   gap: 12px;
   transition: background-color 0.15s, border-color 0.15s;
+  view-transition-name: navbar;
 }
 
 .navbar-brand {
@@ -250,6 +251,14 @@ body {
   background: var(--color-primary-subtle) !important;
   color: var(--color-primary) !important;
   font-weight: 500;
+}
+
+/* ─── Home shell ────────────────────────────────────────────── */
+.home-shell {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  view-transition-name: page;
 }
 
 /* ─── Doc main ──────────────────────────────────────────────── */
@@ -705,6 +714,12 @@ html.dark .code-block-copy--ok { color: #86efac; }
 @keyframes vt-fade-out { to { opacity: 0; } }
 @keyframes vt-fade-in  { from { opacity: 0; } }
 
+::view-transition-old(root),
+::view-transition-new(root) { animation: none; }
+
+::view-transition-old(navbar),
+::view-transition-new(navbar) { animation: none; }
+
 ::view-transition-old(page) { animation: 120ms ease-out vt-fade-out both; }
 ::view-transition-new(page) { animation: 180ms ease-in  vt-fade-in  both; }
 
@@ -741,7 +756,14 @@ html.dark .code-block-copy--ok { color: #86efac; }
     pointer-events: auto;
   }
 
-  .doc-main { padding: 28px 20px 48px; }
+  .doc-main {
+    padding: 28px 20px 48px;
+    view-transition-name: none;
+  }
+
+  .home-shell {
+    view-transition-name: none;
+  }
 
   .nav-pager { flex-direction: column; }
   .pager-btn { max-width: 100%; }

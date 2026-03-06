@@ -1,6 +1,7 @@
 import { lazy, type RouteDefinition } from '@faber1999/axon.js'
 
 import { DocLayout } from '../components/DocLayout'
+import { HomeLayout } from '../components/HomeLayout'
 
 import BatchUntrack from '../pages/docs/BatchUntrack'
 import Computed from '../pages/docs/Computed'
@@ -26,7 +27,7 @@ const Home = lazy(() => import('../pages/Home'))
 const NotFound = lazy(() => import('../pages/NotFound'))
 
 export const routes: RouteDefinition[] = [
-  { path: '/', component: Home },
+  { layout: HomeLayout, children: [{ path: '/', component: Home }] },
   {
     layout: DocLayout,
     children: [

@@ -1,4 +1,4 @@
-import { Link, signal } from '@faber1999/axon.js'
+import { Link, signal, useRouter } from '@faber1999/axon.js'
 import { langStore, setLang, t } from '../i18n'
 import { themeStore, toggleTheme } from '../stores/themeStore'
 import { Logo } from './Logo'
@@ -67,19 +67,21 @@ function MenuIcon() {
 }
 
 export function Navbar() {
+  const router = useRouter()
+
   return (
     <header class="navbar">
-      <button class="icon-btn mobile-menu-btn" onClick={() => setSidebarOpen((v) => !v)} title={t('ui.openMenu')}>
-        <MenuIcon />
-      </button>
+      {() =>
+        router.pathname() === '/' || router.pathname().startsWith('/docs') ? (
+          <button class="icon-btn mobile-menu-btn" onClick={() => setSidebarOpen((v) => !v)} title={t('ui.openMenu')}>
+            <MenuIcon />
+          </button>
+        ) : null
+      }
 
       <Link href="/" class="navbar-brand">
         <Logo size={24} />
         <span>axon.js</span>
-      </Link>
-
-      <Link href="/docs/introduction" class="navbar-docs-link">
-        <span>{t('ui.docs')}</span>
       </Link>
 
       <div class="navbar-spacer" />

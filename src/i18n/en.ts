@@ -10,6 +10,7 @@ export const en = {
   'nav.group.advanced': 'Advanced',
 
   // Nav items
+  'nav.home': 'Home',
   'nav.introduction': 'Introduction',
   'nav.installation': 'Installation',
   'nav.signals': 'Signals',

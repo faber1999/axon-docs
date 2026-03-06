@@ -12,6 +12,7 @@ export const es: Record<TranslationKey, string> = {
   'nav.group.advanced': 'Avanzado',
 
   // Nav items
+  'nav.home': 'Inicio',
   'nav.introduction': 'Introducción',
   'nav.installation': 'Instalación',
   'nav.signals': 'Señales',

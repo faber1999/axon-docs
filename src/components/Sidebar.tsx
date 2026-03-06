@@ -13,6 +13,20 @@ export function Sidebar() {
       />
 
       <aside class={() => `sidebar${sidebarOpen() ? ' open' : ''}`}>
+        <div class="sidebar-group">
+          <ul class="sidebar-group-list">
+            <li>
+              <Link
+                href="/"
+                class="sidebar-link"
+                activeClass="sidebar-link--active"
+                onClick={() => setSidebarOpen(false)}
+              >
+                <span>{t('nav.home')}</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
         {navGroups.map((group) => (
           <div class="sidebar-group">
             <p class="sidebar-group-label">{t(group.groupKey)}</p>
