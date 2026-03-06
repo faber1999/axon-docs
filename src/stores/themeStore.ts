@@ -2,10 +2,8 @@ import { createStore, effect } from '@faber1999/axon.js'
 
 export type Theme = 'light' | 'dark'
 
-const saved = typeof localStorage !== 'undefined'
-  ? (localStorage.getItem('axon-docs-theme') as Theme | null)
-  : null
-const initialTheme: Theme = saved === 'dark' || saved === 'light' ? saved : 'light'
+const saved = typeof localStorage !== 'undefined' ? (localStorage.getItem('axon-docs-theme') as Theme | null) : null
+const initialTheme: Theme = saved === 'dark' || saved === 'light' ? saved : 'dark'
 
 export const [themeStore, setThemeStore] = createStore<{ theme: Theme }>({ theme: initialTheme })
 
